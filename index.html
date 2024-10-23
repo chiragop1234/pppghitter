@@ -12,7 +12,7 @@
       padding: 0;
       font-family: 'Poppins', sans-serif;
       color: #ffffff;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(135deg, #1e1e1e, #111111);
       background-size: cover;
       background-attachment: fixed;
       display: flex;
@@ -23,19 +23,20 @@
     }
 
     .container {
-      background: rgba(15, 32, 39, 0.85);
+      background: rgba(10, 10, 10, 0.95);
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      max-width: 650px;
       width: 100%;
-      animation: fadeInUp 1s ease;
+      animation: fadeInUp 0.7s ease;
     }
 
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -45,19 +46,19 @@
 
     .header h1 {
       text-align: center;
-      font-size: 36px;
+      font-size: 38px;
       font-weight: 700;
-      color: #ffffff;
+      color: #e0e0e0;
       margin-bottom: 30px;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     }
 
     p {
       text-align: center;
-      color: #cccccc;
+      color: #999999;
       margin-bottom: 20px;
-      font-size: 16px;
+      font-size: 15px;
     }
 
     .input-group {
@@ -67,9 +68,10 @@
 
     .input-group label {
       display: block;
-      color: #ffffff;
+      color: #bbbbbb;
       font-weight: 600;
       margin-bottom: 10px;
+      font-size: 16px;
     }
 
     .input-group input, .input-group textarea {
@@ -77,21 +79,21 @@
       padding: 14px 18px;
       border: none;
       border-radius: 12px;
-      background: rgba(50, 50, 50, 0.3);
+      background: rgba(50, 50, 50, 0.8);
       color: #ffffff;
       font-size: 16px;
       outline: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
       transition: all 0.3s ease;
     }
 
     .input-group input:focus, .input-group textarea:focus {
-      background: rgba(50, 50, 50, 0.6);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      background: rgba(50, 50, 50, 1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
     }
 
     .input-group textarea {
-      min-height: 100px;
+      min-height: 120px;
       resize: vertical;
     }
 
@@ -103,11 +105,11 @@
 
     .toggle-buttons {
       display: flex;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(50, 50, 50, 0.3);
       border-radius: 30px;
       overflow: hidden;
-      width: 250px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      width: 260px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
       position: relative;
     }
 
@@ -117,7 +119,7 @@
       left: 5px;
       height: 45px;
       width: 50%;
-      background: linear-gradient(135deg, #203a43, #2c5364);
+      background: linear-gradient(135deg, #202020, #3b3b3b);
       border-radius: 30px;
       transition: transform 0.3s ease;
       z-index: 0;
@@ -128,7 +130,7 @@
       padding: 12px 0;
       text-align: center;
       font-size: 16px;
-      color: #cccccc;
+      color: #bbbbbb;
       cursor: pointer;
       z-index: 1;
       transition: color 0.3s ease;
@@ -140,11 +142,11 @@
 
     .telegram-section, .settings-section {
       display: none;
-      background: rgba(50, 50, 50, 0.5);
+      background: rgba(20, 20, 20, 0.85);
       padding: 25px;
       border-radius: 12px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     }
 
     .telegram-section.active, .settings-section.active-section {
@@ -155,7 +157,7 @@
       display: block;
       width: 100%;
       padding: 14px;
-      background: linear-gradient(135deg, #2c5364, #203a43);
+      background: linear-gradient(135deg, #333333, #555555);
       color: #ffffff;
       border: none;
       border-radius: 25px;
@@ -167,7 +169,7 @@
     }
 
     .save-button:hover {
-      background: linear-gradient(135deg, #2c5364, #0f2027);
+      background: linear-gradient(135deg, #555555, #333333);
       transform: translateY(-3px);
     }
 
