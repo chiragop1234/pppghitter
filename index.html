@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propaganda Auto Checkouter - Settings</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background: rgba(15, 32, 39, 0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      width: 100%;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header h1 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+      text-align: center;
+      color: #cccccc;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .input-group label {
+      display: block;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .input-group input, .input-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(50, 50, 50, 0.3);
+      color: #ffffff;
+      font-size: 16px;
+      outline: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+      background: rgba(50, 50, 50, 0.6);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .input-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .toggle-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .toggle-buttons {
+      display: flex;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      overflow: hidden;
+      width: 250px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .toggle-buttons .slider {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      height: 45px;
+      width: 50%;
+      background: linear-gradient(135deg, #203a43, #2c5364);
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .toggle-button {
+      flex: 1;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 16px;
+      color: #cccccc;
+      cursor: pointer;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-button.active {
+      color: #ffffff;
+    }
+
+    .telegram-section, .settings-section {
+      display: none;
+      background: rgba(50, 50, 50, 0.5);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .telegram-section.active, .settings-section.active-section {
+      display: block;
+    }
+
+    .save-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #2c5364, #203a43);
+      color: #ffffff;
+      border: none;
+      border-radius: 25px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .save-button:hover {
+      background: linear-gradient(135deg, #2c5364, #0f2027);
+      transform: translateY(-3px);
+    }
+
+    .save-button:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>PROPAGANDA AUTO CHECKOUTER 💳</h1>
+    </div>
+
+    <p>Configure your settings below.</p>
+
+    <div class="toggle-container">
+      <div class="toggle-buttons" id="toggle-buttons">
+        <div class="slider"></div>
+        <button id="bin-toggle" class="toggle-button active">BIN</button>
+        <button id="cc-toggle" class="toggle-button">CC</button>
+      </div>
+    </div>
+
+    <div id="bin-section" class="settings-section active-section">
+      <div class="input-group">
+        <label for="bin-input">Enter BIN:</label>
+        <input type="text" id="bin-input" placeholder="e.g., 424242 (BIN)">
+      </div>
+
+      <div class="input-group">
+        <label for="bin-selector-input">Enter Submit Button Selector (XPath or CSS):</label>
+        <input type="text" id="bin-selector-input" placeholder="e.g., .SubmitButton">
+      </div>
+    </div>
+
+    <div id="cc-section" class="settings-section">
+      <div class="input-group">
+        <label for="card-list-input">Enter Card List (max 10, one per line):</label>
+        <textarea id="card-list-input" placeholder="e.g., 4117704096191910|10|2028|216"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="cc-selector-input">Enter Submit Button Selector (XPath or CSS):</label>
+        <input type="text" id="cc-selector-input" placeholder="e.g., .SubmitButton">
+      </div>
+    </div>
+
+    <div id="telegram-section" class="telegram-section">
+      <h2>Telegram Settings</h2>
+      <div class="input-group">
+        <label for="telegram-id-input">Enter Your Telegram ID:</label>
+        <input type="text" id="telegram-id-input" placeholder="e.g., 123456789">
+      </div>
+
+      <div class="input-group">
+        <button id="send-otp" class="save-button">Send OTP</button>
+      </div>
+
+      <div class="input-group">
+        <label for="otp-input">Enter OTP:</label>
+        <input type="text" id="otp-input" placeholder="Enter OTP">
+      </div>
+
+      <div class="input-group">
+        <button id="verify-otp" class="save-button">Verify OTP</button>
+      </div>
+    </div>
+
+    <button id="save-settings" class="save-button">Save Settings</button>
+    <p id="status-message"></p>
+  </div>
+</body>
+</html>
